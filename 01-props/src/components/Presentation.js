@@ -1,15 +1,17 @@
 export default function Presentation(props) {
-    console.log(props);
+  const { nom, prenom } = props.personne;
 
-    const { nom, prenom } = props.personne;
+  return (
+    <div>
+      <h2>Salut {nom} {prenom}</h2>
+      <hr />
 
-    return (
-        <div>
-            <h2>Salut {nom} {prenom}</h2>
-            <hr />
+      <h3>Diplômes :</h3>
+      <p>{props.diplomes[0]}</p>
+      <p>{props.diplomes[1]}</p>
+      <p>{props.diplomes[2]}</p>
 
-            <h3>Diplômes :</h3>
-            <p>{props.diplomes}</p>
-        </div>
-    );
+      {props.children}
+    </div>
+  );
 }

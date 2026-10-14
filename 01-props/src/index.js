@@ -1,27 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Presentation from './components/Presentation';
 import PresentationClasse from './components/PresentationClasse';
 
-const root = ReactDOM.createRoot(
-    document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function App() {
-    const personne1 = {
-        nom: "Rami",
-        prenom: "Ahmed"
-    };
+  const personne = {
+    nom: 'Rami',
+    prenom: 'Ahmed'
+  };
 
-    const diplomes = ["Bac", "Licence", "Master"];
+  const diplomes = ['Bac', 'Licence', 'Master'];
 
-    return (
-        <div>
-            <PresentationClasse
-                personne={personne1}
-                diplomes={diplomes}
-            />
-        </div>
-    );
+  return (
+    <div>
+      <Presentation personne={personne} diplomes={diplomes}>
+        <p>Version fonction</p>
+      </Presentation>
+
+      <hr />
+
+      <PresentationClasse personne={personne} diplomes={diplomes}>
+        <p>Version classe</p>
+      </PresentationClasse>
+    </div>
+  );
 }
 
 root.render(<App />);
